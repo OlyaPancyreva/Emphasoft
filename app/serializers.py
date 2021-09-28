@@ -10,8 +10,7 @@ class ReadOnly(serializers.ModelSerializer):
                   'last_login', 'is_superuser',)
 
 
-# read only
-class UserSerializerReadOnly(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     user = ReadOnly(read_only=True)
 
     class Meta:
@@ -19,7 +18,3 @@ class UserSerializerReadOnly(serializers.ModelSerializer):
         fields = ('user',)
 
 
-class UserSerializerWriteOnly(serializers.ModelSerializer):
-    class Meta:
-        model = Users
-        fields = '__all__'

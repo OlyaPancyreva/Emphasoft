@@ -1,9 +1,13 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.conf.urls import url, include
+from app import views
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register(r'api/v1/users', views.UserView)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/v1/users/', include('app.urls')),
-    path('auth/', include('djoser.urls')),
-    path('auth/', include('djoser.urls.jwt')),
-]
+    url(r'^', include(router.urls)),
+    ]
+
+
+

@@ -81,8 +81,7 @@ REST_FRAMEWORK = {
 }
 
 DJOSER = {
-    'ACTIVATION_URL': '#/activate/{uid}/{token}',
-    'SEND_ACTIVATION_EMAIL': False,
+    'user_create': 'djoser.serializers.UserCreateSerializer',
 }
 
 SIMPLE_JWT = {

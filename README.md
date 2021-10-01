@@ -18,5 +18,7 @@ Token authentication - /auth/token/login/
 
 
 Get users - /api/v1/users/
+            headers: auth_token
 
 Get, Put, Patch, Delete - /api/v1/users/{id}/
+            headers: auth_token

@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
+    'rest_framework.authtoken',
     'djoser',
     'app'
 ]
@@ -75,18 +76,18 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ),
 }
 
 DJOSER = {
-    'user_create': 'djoser.serializers.UserCreateSerializer',
+    'SERIALIZERS': {
+        'user_create': 'app.serializers.UserSerializer',
+        "user": "app.serializers.UserSerializer",
+    }
 }
 
-SIMPLE_JWT = {
-    'AUTH_HEADER_TYPES': ('JWT',)
-}
+AUTH_USER_MODEL = 'app.Users'
 
 WSGI_APPLICATION = 'Emphasoft.wsgi.application'
 

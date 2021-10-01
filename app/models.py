@@ -1,13 +1,7 @@
-from django.contrib.auth.models import User
-from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
-class Users(models.Model):
-    user = models.OneToOneField(User, verbose_name='Пользователь', on_delete=models.CASCADE)
+class Users(AbstractUser):
 
     def __str__(self):
-        return self.user.username
-
-    class Meta:
-        verbose_name = 'Пользователь'
-        verbose_name_plural = 'Пользователи'
+        return self.username

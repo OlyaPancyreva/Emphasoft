@@ -19,4 +19,4 @@ Token authentication - /auth/token/login/
 
 Get users - /api/v1/users/
 
-Get, Put, Patch, Delete - api/v1/users/{id}/
+Get, Put, Patch, Delete - /api/v1/users/{id}/
